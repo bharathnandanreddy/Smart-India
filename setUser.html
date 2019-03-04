@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>set user</title>
+</head>
+<body>
+
+</body>
+<script src="./node_modules/web3/dist/web3.min.js"></script>
+
+          <script src="assets/js/main.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+<script>
+	 config = {
+    apiKey: "AIzaSyBGeuxBeyDhCwTYdq9sONUD9oAkXwt0OMg",
+    authDomain: "trackdg6.firebaseapp.com",
+    databaseURL: "https://trackdg6.firebaseio.com",
+    projectId: "trackdg6",
+    storageBucket: "trackdg6.appspot.com",
+    messagingSenderId: "79652886697"
+  };
+  firebase.initializeApp(config);
+	var ref = firebase.database().ref();
+   ref.child("users").on('value',function(snapshot){
+      snapshot.forEach(function(child) {
+      
+      
+      	if(child.val()!='fci'){
+          alert(child.key);
+      	obj.setUser.sendTransaction(child.val(),child.key,100,transactionObj);
+      }
+      else
+        alert(child.val());
+     
+});
+   
+
+  });
+   function fps(){
+ var ad=document.getElementById("fpsadds").value;
+ var from;
+
+   switch(ad){
+   case  'FPS4': from ="0x009561cc2d40149873d0bdac3074427b1effdd37";break;
+
+   case 'FPS2':from ="0x05fcaaab5a21128075683fb3406d4e98cc5f6e51";break;
+
+  
+
+  case 'FPS1':from="0x71e9319856ccafa195bc1624abb20727b1bd57d6";break;
+
+case 'FPS5':from="0xf4058965b057b71ae86b3207475fcdd9e1bdbc97";break;
+
+case 'FPS3': from="0xf4d46a7c5e9ede3aab7d1fe1bf56e9f40e688c94";break;
+  
+  }
+
+
+
+window.location.href="fps.html?adds="+from;
+  
+}
+	</script>
+</html>

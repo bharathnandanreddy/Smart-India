@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>set user</title>
+</head>
+<body>
+
+</body>
+<script src="./node_modules/web3/dist/web3.min.js"></script>
+
+          <script src="assets/js/main.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+<script>
+	var ref = firebase.database().ref();
+   ref.child("users").child("distributors").child(qs.adds).on('value',function(snapshot){
+      snapshot.forEach(function(child) {
+      	if(!(child.val().equals('fci')))
+      	obj.setUser.sendTransaction(child.val(),child.key,0,transactionObj);
+      else
+      	alert("fci");
+
+
+   
+
+  });
+	</script>
+</html>

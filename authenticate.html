@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<link rel="shortcut icon" type="image/icon" href="assets/images/favicon.ico"/>
+    <!-- Font Awesome -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">    
+    <!-- Slick slider -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/> 
+    <!-- Fancybox slider -->
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="screen" /> 
+    <!-- Animate css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css"/> 
+    <!-- Progress bar  -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-progressbar-3.3.4.css"/> 
+     <!-- Theme color -->
+    <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
+
+    <!-- Main Style -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- Fonts -->
+
+    <!-- Open Sans for body font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- Lato for Title -->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>    
+
+<body>
+
+	<center>
+
+		<img  style="margin-top: 150px" src="assets/images/giphy.gif" width="30%" alt="logo">
+		<h1><span id="name"></span> Authentication</h1>
+		 
+</center>
+
+</body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.js"></script>
+    <!-- Slick Slider -->
+    <script type="text/javascript" src="assets/js/slick.js"></script>    
+    <!-- mixit slider -->
+    <script type="text/javascript" src="assets/js/jquery.mixitup.js"></script>
+    <!-- Add fancyBox -->        
+    <script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
+   <!-- counter -->
+    <script src="assets/js/waypoints.js"></script>
+    <script src="assets/js/jquery.counterup.js"></script>
+    <!-- Wow animation -->
+    <script type="text/javascript" src="assets/js/wow.js"></script> 
+    <!-- progress bar   -->
+    <script type="text/javascript" src="assets/js/bootstrap-progressbar.js"></script>  
+    
+   
+    <!-- Custom js -->
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+
+          <script src="assets/js/main.js"></script>
+<script>
+
+
+
+	 function getQueryParams(qs) {
+    qs = qs.split('+').join(' ');
+
+    var params = {},
+        tokens,
+        re = /[?&]?([^=]+)=([^&]*)/g;
+
+    while (tokens = re.exec(qs)) {
+        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+    }
+
+    return params;
+}
+
+ $(document).keypress(function (e) { 
+ 	if (e.which == 13 || event.keyCode == 13) 
+ 		move("transact");
+ 	});
+	var query = window.location.search;
+var qs = getQueryParams(query);
+var name="";
+name=qs.name;
+name=name.toUpperCase();
+$("#name").append(name);
+ function move(argument) {
+    if(qs.m=='t'){
+     
+         window.location.href="mtransact.html?adds="+qs.adds;
+    }
+    else if(qs.f=='t')
+         window.location.href="fpsform.html?adds="+qs.adds;
+     else if(qs.m=='f')
+        window.location.href="jasform.html?adds="+qs.adds;
+    else
+    window.location.href=argument+".html?adds="+qs.adds;
+  }
+  function fps(){
+ var ad=document.getElementById("fpsadds").value;
+ var from;
+
+   switch(ad){
+   case  'FPS4': from ="0x009561cc2d40149873d0bdac3074427b1effdd37";break;
+
+   case 'FPS2':from ="0x05fcaaab5a21128075683fb3406d4e98cc5f6e51";break;
+
+  
+
+  case 'FPS1':from="0x71e9319856ccafa195bc1624abb20727b1bd57d6";break;
+
+case 'FPS5':from="0xf4058965b057b71ae86b3207475fcdd9e1bdbc97";break;
+
+case 'FPS3': from="0xf4d46a7c5e9ede3aab7d1fe1bf56e9f40e688c94";break;
+  
+  }
+
+
+
+window.location.href="fps.html?adds="+from;
+  
+}
+</script>
+</html>

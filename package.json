@@ -1,0 +1,22 @@
+{
+  "name": "supplychain",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puretext": "^0.1.5",
+    "request": "^2.88.0",
+    "require": "^2.4.20",
+    "twilio": "^3.28.1",
+    "web3": "github:ethereum/web3.js"
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  },
+  "description": ""
+}
